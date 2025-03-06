@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTourisClientRequest;
-use App\Http\Requests\UpdateTourisClientRequest;
 use App\Models\TourisClient;
 use Illuminate\Http\Request;
 
@@ -41,27 +40,28 @@ class TourisClientController extends Controller
      */
     public function edit($id)
     {
-        $touris_client = TourisClient::findOrFail($id);
-        return view('clients.edit', compact('touris_client'));
+        $client = TourisClient::findOrFail($id);
+        return view('clients.edit', compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTourisClientRequest $request, TourisClient $touris_client)
+    public function update(Request $request, $id)
     {
-        $updateClient = $request->validate([
+        $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'date_of_birth' => 'required|date',
             'client_address' => 'required|string|max:255',
             'client_phone' => 'required|string|max:255',
-            'client_email' => 'required|string|email|max:255',
+            'client_email' => 'required|string|email|max:255|unique:touris_clients,client_email,' . $id,
         ]);
 
-        $client = TourisClient::findOrFail();
-        $client->update($updateClient);
-        return redirect()->route('clients.index');
+        $client = TourisClient::findOrFail($id);
+        $client->update($validated);
+
+        return redirect()->route('clients.index')->with('success', 'Client updated successfully');
     }
 
     /**

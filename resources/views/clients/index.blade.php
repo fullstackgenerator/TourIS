@@ -1,18 +1,14 @@
 @extends('layouts.sidebar')
 
 @section('content')
-
     <div class="card py-2 w-100 mx-auto">
         <div class="card-body">
             <h3 class="pb-4 font-weight-bold">Manage Clients</h3>
 
             <div class="row">
-
-                <!-- Search clients -->
                 <div class="col-md-6">
-                    <h4>Search Clients</h4>
+                    <h4>Search clients</h4>
                     <form method="GET" action="{{ route('clients.index') }}" class="mb-4">
-                        @csrf
                         <div class="input-group">
                             <input type="text" name="search" class="form-control" placeholder="Search"
                                    value="{{ request('search') }}">
@@ -35,20 +31,20 @@
                                 <td>{{ $client->last_name }}</td>
                                 <td class="text-center">
                                     <div class="d-flex justify-content-center gap-2">
-                                    <a href="{{ route('clients.edit', $client->id) }}"
-                                       class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-warning">Edit</a>
 
-                                    <form action="{{ route('clients.select') }}" method="POST" class="d-inline">
-                                        @csrf
-                                        <input type="hidden" name="client_id" value="{{ $client->id }}">
-                                        <button type="submit" class="btn btn-success">Select</button>
-                                    </form>
+                                        <form action="{{ route('clients.select') }}" method="POST" class="d-inline">
+                                            @csrf
+                                            <input type="hidden" name="client_id" value="{{ $client->id }}">
+                                            <button type="submit" class="btn btn-success">Select</button>
+                                        </form>
 
-                                    <form action="{{ route('clients.destroy', $client->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                        <form action="{{ route('clients.destroy', $client->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -62,16 +58,16 @@
 
                 <!-- Add clients -->
                 <div class="col-md-6">
-                    <h4>Add Clients</h4>
+                    <h4>Add clients</h4>
                     <form action="{{ route('clients.store') }}" method="post">
                         @csrf
 
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="first_name" placeholder="First Name" required/>
+                            <input type="text" class="form-control" name="first_name" placeholder="First name" required/>
                         </div>
 
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="last_name" placeholder="Last Name" required/>
+                            <input type="text" class="form-control" name="last_name" placeholder="Last name" required/>
                         </div>
 
                         <div class="mb-3">
@@ -94,9 +90,7 @@
                         <button type="submit" class="btn btn-primary w-100">Confirm</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
-
 @endsection

@@ -11,7 +11,7 @@ class UpdateTourisClientRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateTourisClientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'date_of_birth' => 'required|date',
+            'client_address' => 'required|string|max:255',
+            'client_phone' => 'required|string|max:255',
+            'client_email' => 'required|string|email|max:255|unique:touris_clients,client_email',
         ];
     }
 }

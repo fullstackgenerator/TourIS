@@ -42,8 +42,7 @@
                                         </form>
 
                                         <form action="{{ route('accommodations.destroy', $accommodation->id) }}"
-                                              method="POST"
-                                              onsubmit="return confirm('Are you sure you want to delete this accommodation?');">
+                                              method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
