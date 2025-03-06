@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TourIS;
-use App\Http\Requests\StoreTourISRequest;
-use App\Http\Requests\UpdateTourISRequest;
-use App\Models\TourisAccommodation;
+use App\Models\Packages;
+use App\Http\Requests\StorePackagesRequest;
+use App\Http\Requests\UpdatePackagesRequest;
 
-class TourISController extends Controller
+class PackagesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $accommodations = TourisAccommodation::all();
-        $selectedClient = session('selected_client');
-
-        return view('touris.index', compact('accommodations', 'selectedClient'));
+        //
     }
 
     /**
@@ -31,7 +27,7 @@ class TourISController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTourISRequest $request)
+    public function store(StorePackagesRequest $request)
     {
         //
     }
@@ -39,7 +35,7 @@ class TourISController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TourIS $tourIS)
+    public function show(Packages $packages)
     {
         //
     }
@@ -47,7 +43,7 @@ class TourISController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TourIS $tourIS)
+    public function edit(Packages $packages)
     {
         //
     }
@@ -55,7 +51,7 @@ class TourISController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTourISRequest $request, TourIS $tourIS)
+    public function update(UpdatePackagesRequest $request, Packages $packages)
     {
         //
     }
@@ -63,7 +59,7 @@ class TourISController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TourIS $tourIS)
+    public function destroy(Packages $packages)
     {
         //
     }
