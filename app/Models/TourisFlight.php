@@ -9,4 +9,12 @@ class TourisFlight extends Model
 {
     /** @use HasFactory<\Database\Factories\TourisFlightFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'flight_number',
+        'flight_class',
+        'seat_number',
+        'departure_from',
+        'arrival_to'
+    ];
 }

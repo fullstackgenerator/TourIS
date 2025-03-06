@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('touris_flights', function (Blueprint $table) {
             $table->id();
+            $table->string('flight_number');
+            $table->string('flight_class');
+            $table->string('seat_number');
+            $table->string('departure_location');
+            $table->string('arrival_location');
+            $table->string('carrier');
+            $table->date('departure_date');
+            $table->date('arrival_date');
             $table->timestamps();
         });
     }

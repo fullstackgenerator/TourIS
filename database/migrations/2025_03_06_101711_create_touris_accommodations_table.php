@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('touris_accommodations', function (Blueprint $table) {
             $table->id();
+            $table->string('accommodation_country');
+            $table->string('accommodation_city');
+            $table->string('accommodation_name');
+            $table->string('accommodation_address');
+            $table->string('accommodation_phone');
+            $table->string('accommodation_email');
             $table->timestamps();
         });
     }

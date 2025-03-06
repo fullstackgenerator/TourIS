@@ -18,9 +18,6 @@
                 <li class="nav-item">
                     <a href="{{ route('sales.index') }}" class="btn btn-green w-75 my-3 mx-5">Sales</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('vendors.index') }}" class="btn btn-lime w-75 my-3 mx-5">Back</a>
-                </li>
             </ul>
         </div>
     </aside>
