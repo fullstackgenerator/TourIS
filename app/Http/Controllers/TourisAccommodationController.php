@@ -15,10 +15,12 @@ class TourisAccommodationController extends Controller
         $accommodations = TourisAccommodation::when($request->search, function ($query) use ($request) {
             $query->where('accommodation_name', 'like', "%{$request->search}%")
                 ->orWhere('accommodation_city', 'like', "%{$request->search}%");
-        })->get();
+        })->simplePaginate(5);
 
         return view('accommodations.index', compact('accommodations'));
     }
+
+
 
     /**
      * Store a new accommodation.
@@ -61,7 +63,6 @@ class TourisAccommodationController extends Controller
 
         return redirect()->route('accommodations.index');
     }
-
 
     public function destroy($id)
     {

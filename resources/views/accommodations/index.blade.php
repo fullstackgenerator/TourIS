@@ -53,6 +53,11 @@
                         @endforeach
                         </tbody>
                     </table>
+
+                    <!-- Pagination links -->
+                    <div class="pagination">
+                        {{ $accommodations->links() }}
+                    </div>
                 </div>
 
                 <div class="col-md-6">

@@ -54,6 +54,11 @@
                     @if($clients->isEmpty())
                         <p class="text-center text-muted">No clients found.</p>
                     @endif
+
+                    <!-- Pagination links -->
+                    <div class="pagination">
+                        {{ $clients->links() }}
+                    </div>
                 </div>
 
                 <!-- Add clients -->
