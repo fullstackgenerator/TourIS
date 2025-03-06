@@ -65,51 +65,73 @@
                 <div class="col-md-6">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">To add a flight, please click the flights tab.</h5>
+                            <h5 class="card-title">Add flight details</h5>
                             <div class="row">
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="flight_number"
-                                           placeholder="Flight number"/>
+                                           placeholder="Flight number" value="{{ old('flight_number') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="flight_class"
-                                           placeholder="Flight class"/>
+                                           placeholder="Flight class" value="{{ old('flight_class') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="seat_number"
-                                           placeholder="Seat number"/>
+                                    <input type="text" class="form-control" name="seat_number" placeholder="Seat number"
+                                           value="{{ old('seat_number') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="departure_from"
-                                           placeholder="Departure location"/>
+                                           placeholder="Departure location" value="{{ old('departure_from') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="arrival_to"
-                                           placeholder="Arrival location"/>
+                                           placeholder="Arrival location" value="{{ old('arrival_to') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="carrier">
                                         <option value="" disabled selected>Select carrier</option>
-                                        <option value="Lufthansa">Lufthansa</option>
-                                        <option value="Air France">Air France</option>
-                                        <option value="British Airways">British Airways</option>
-                                        <option value="KLM Royal Dutch Airlines">KLM Royal Dutch Airlines</option>
-                                        <option value="Turkish Airlines">Turkish Airlines</option>
-                                        <option value="Ryanair">Ryanair</option>
-                                        <option value="easyJet">easyJet</option>
-                                        <option value="Swiss International Air Lines">Swiss International Air Lines
+                                        <option value="Lufthansa" {{ old('carrier') == 'Lufthansa' ? 'selected' : '' }}>
+                                            Lufthansa
+                                        </option>
+                                        <option
+                                            value="Air France" {{ old('carrier') == 'Air France' ? 'selected' : '' }}>
+                                            Air France
+                                        </option>
+                                        <option
+                                            value="British Airways" {{ old('carrier') == 'British Airways' ? 'selected' : '' }}>
+                                            British Airways
+                                        </option>
+                                        <option
+                                            value="KLM Royal Dutch Airlines" {{ old('carrier') == 'KLM Royal Dutch Airlines' ? 'selected' : '' }}>
+                                            KLM Royal Dutch Airlines
+                                        </option>
+                                        <option
+                                            value="Turkish Airlines" {{ old('carrier') == 'Turkish Airlines' ? 'selected' : '' }}>
+                                            Turkish Airlines
+                                        </option>
+                                        <option value="Ryanair" {{ old('carrier') == 'Ryanair' ? 'selected' : '' }}>
+                                            Ryanair
+                                        </option>
+                                        <option value="easyJet" {{ old('carrier') == 'easyJet' ? 'selected' : '' }}>
+                                            easyJet
+                                        </option>
+                                        <option
+                                            value="Swiss International Air Lines" {{ old('carrier') == 'Swiss International Air Lines' ? 'selected' : '' }}>
+                                            Swiss International Air Lines
                                         </option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="departure_date"/>
+                                    <input type="date" class="form-control" name="departure_date"
+                                           value="{{ old('departure_date') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="arrival_date"/>
+                                    <input type="date" class="form-control" name="arrival_date"
+                                           value="{{ old('arrival_date') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="number" class="form-control" name="flights_total_amount"
-                                           placeholder="Amount"/>
+                                           placeholder="Amount" value="{{ old('flights_total_amount') }}"/>
                                 </div>
                             </div>
                         </div>

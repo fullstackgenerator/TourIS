@@ -9,14 +9,14 @@
                 <li class="nav-item">
                     <a href="{{ route('accommodations.index') }}" class="btn btn-azure w-75 my-3 mx-5">Accommodations</a>
                 </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="{{ route('flights.index') }}" class="btn btn-cyan w-75 my-3 mx-5">Flights</a>--}}
+{{--                </li>--}}
                 <li class="nav-item">
-                    <a href="{{ route('flights.index') }}" class="btn btn-cyan w-75 my-3 mx-5">Flights</a>
+                    <a href="{{ route('clients.index') }}" class="btn btn-cyan w-75 my-3 mx-5">Clients</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('clients.index') }}" class="btn btn-teal w-75 my-3 mx-5">Clients</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('sales.index') }}" class="btn btn-green w-75 my-3 mx-5">Sales</a>
+                    <a href="{{ route('sales.index') }}" class="btn btn-teal w-75 my-3 mx-5">Sales</a>
                 </li>
             </ul>
         </div>

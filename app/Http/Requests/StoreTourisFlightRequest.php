@@ -11,7 +11,7 @@ class StoreTourisFlightRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreTourisFlightRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'flight_number' => 'required|string|min:4|max:4',
+            'flight_class'  => ['business', 'economy'],
+            'seat_number' => ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J','K'],
+            'departure_from' => 'required|string|max:255',
+            'arrival_to' => 'required|string|max:255',
         ];
     }
 }
