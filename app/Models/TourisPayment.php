@@ -16,7 +16,7 @@ class TourisPayment extends Model
         'payment_date',
         'full_name',
         'recipient_address',
-        'recipient_ phone',
+        'recipient_phone',
         'cancellation',
     ];
 }

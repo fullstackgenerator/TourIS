@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\TourisPayment;
 use App\Http\Requests\StoreTourisPaymentRequest;
-use App\Http\Requests\UpdateTourisPaymentRequest;
 
 class TourisPaymentController extends Controller
 {
@@ -19,13 +18,13 @@ class TourisPaymentController extends Controller
     public function store(StoreTourisPaymentRequest $request)
     {
         $request->validate([
-            'payment_type' => ['cash', 'credit_card', 'bank_transfer'],
+            'payment_type' => 'required|string|in:Cash,Credit card,Bank transfer',
             'amount' => 'required|numeric|min:1',
             'payment_date' => 'required|date',
             'full_name' => 'required|string|max:100',
             'recipient_address' => 'required|string|max:100',
             'recipient_phone' => 'required|string|max:100',
-            'cancellation' => 'required|boolean',
+            'cancellation' => 'nullable|boolean',
         ]);
 
         $payment = new TourisPayment([
@@ -33,9 +32,13 @@ class TourisPaymentController extends Controller
             'amount' => $request->amount,
             'payment_date' => $request->payment_date,
             'full_name' => $request->full_name,
-            'recipient_address' => $request->address,
-            'recipient_phone' => $request->phone,
-            'cancellation' => $request->cancellation
+            'recipient_address' => $request->recipient_address,
+            'recipient_phone' => $request->recipient_phone,
+            'cancellation' => $request->cancellation ?? 0,
         ]);
+
+        $payment->save();
+
+        return redirect()->route('sales.index')->with('success', 'Payment saved successfully.');
     }
 }

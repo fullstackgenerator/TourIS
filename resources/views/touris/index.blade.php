@@ -214,9 +214,9 @@
                                 </div>
                                 <div class="col-md-6 py-3">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" name="cancellation"/>
-                                        <label class="form-check-label" for="cancellation">Cancellation option
-                                            (+15%)</label>
+                                        <input type="hidden" name="cancellation" value="0">
+                                        <input type="checkbox" class="form-check-input" name="cancellation" value="1" id="cancellation">
+                                        <label class="form-check-label" for="cancellation">Cancellation option (+15%)</label>
                                     </div>
                                 </div>
                             </div>

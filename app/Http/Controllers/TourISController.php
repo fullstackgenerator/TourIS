@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TourIS;
-use App\Http\Requests\StoreTourISRequest;
-use App\Http\Requests\UpdateTourISRequest;
 use App\Models\TourisAccommodation;
 
 class TourISController extends Controller

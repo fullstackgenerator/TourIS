@@ -5,6 +5,7 @@ use App\Http\Controllers\TourisAccommodationController;
 use App\Http\Controllers\TourisClientController;
 use App\Http\Controllers\TourISController;
 use App\Http\Controllers\TourisFlightController;
+use App\Http\Controllers\TourisPaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/touris', [TourisController::class, 'index'])->name('touris.index');
@@ -25,6 +26,9 @@ Route::post('/clients/select', [TourisClientController::class, 'selectClient'])-
 
 Route::get('/flights', [TourisFlightController::class, 'index'])->name('flights.index');
 Route::post('/flights', [TourisFlightController::class, 'store'])->name('flights.store');
+
+Route::get('/payments', [TourisPaymentController::class, 'index'])->name('payments.index');
+Route::post('/payments', [TourisPaymentController::class, 'store'])->name('payments.store');
 
 Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
 Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
