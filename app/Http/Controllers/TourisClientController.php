@@ -22,7 +22,6 @@ class TourisClientController extends Controller
         return view('clients.index', compact('clients'));
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
@@ -42,44 +41,8 @@ class TourisClientController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Select a client (set session).
      */
-    public function edit($id)
-    {
-        $client = TourisClient::findOrFail($id);
-        return view('clients.edit', compact('client'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'date_of_birth' => 'required|date',
-            'client_address' => 'required|string|max:255',
-            'client_phone' => 'required|string|max:255',
-            'client_email' => 'required|string|email|max:255|unique:touris_clients,client_email,' . $id,
-        ]);
-
-        $client = TourisClient::findOrFail($id);
-        $client->update($validated);
-
-        return redirect()->route('clients.index')->with('success', 'Client updated successfully');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        $touris_client = TourisClient::findOrFail($id);
-        $touris_client->delete();
-        return redirect()->route('clients.index');
-    }
-
     public function selectClient(Request $request)
     {
         $request->validate([
@@ -89,6 +52,6 @@ class TourisClientController extends Controller
         $client = TourisClient::findOrFail($request->client_id);
         session(['selected_client' => $client]);
 
-        return redirect()->route('touris.index');
+        return redirect()->route('sales.index');
     }
 }

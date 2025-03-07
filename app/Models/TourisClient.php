@@ -18,4 +18,10 @@ class TourisClient extends Model
         'client_phone',
         'client_email',
     ];
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
+
 }

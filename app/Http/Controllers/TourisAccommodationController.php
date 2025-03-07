@@ -20,60 +20,8 @@ class TourisAccommodationController extends Controller
         return view('accommodations.index', compact('accommodations'));
     }
 
-
-
     /**
-     * Store a new accommodation.
-     */
-
-    public function store(Request $request)
-    {
-        $accommodation = $request->validate([
-            'accommodation_name' => 'required|string|max:255',
-            'accommodation_address' => 'required|string|max:255',
-            'accommodation_city' => 'required|string|max:255',
-            'accommodation_country' => 'required|string|max:255',
-            'accommodation_phone' => 'required|string|max:20',
-            'accommodation_email' => 'required|email|max:255',
-        ]);
-
-        TourisAccommodation::create($accommodation);
-        return redirect()->route('accommodations.index');
-    }
-
-    public function edit($id)
-    {
-        $accommodation = TourisAccommodation::findOrFail($id);
-        return view('accommodations.edit', compact('accommodation'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $validated = $request->validate([
-            'accommodation_name' => 'required|string|max:255',
-            'accommodation_address' => 'required|string|max:255',
-            'accommodation_city' => 'required|string|max:255',
-            'accommodation_country' => 'required|string|max:255',
-            'accommodation_phone' => 'required|string|max:20',
-            'accommodation_email' => 'required|email|max:255',
-        ]);
-
-        $accommodation = TourisAccommodation::findOrFail($id);
-        $accommodation->update($validated);
-
-        return redirect()->route('accommodations.index');
-    }
-
-    public function destroy($id)
-    {
-        $accommodation = TourisAccommodation::findOrFail($id);
-        $accommodation->delete();
-
-        return redirect()->route('accommodations.index');
-    }
-
-    /**
-     * Select an accommodation (previously saveToPackage).
+     * Select an accommodation (set session).
      */
     public function selectAccommodation(Request $request)
     {
@@ -85,6 +33,6 @@ class TourisAccommodationController extends Controller
 
         session(['accommodation' => $accommodation]);
 
-        return redirect()->route('touris.index');
+        return redirect()->route('sales.index');
     }
 }

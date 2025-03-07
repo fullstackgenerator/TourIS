@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form method="GET" action="{{ route('accommodations.index') }}">
+        <form method="POST" action="{{ route('sales.index') }}">
             @csrf
             <div class="row">
                 <!-- Accommodation card -->

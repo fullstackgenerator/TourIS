@@ -33,4 +33,6 @@ Route::post('/payments', [TourisPaymentController::class, 'store'])->name('payme
 Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
 Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
 
-Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
+
+
+
