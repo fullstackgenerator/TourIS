@@ -26,6 +26,7 @@ Route::post('/clients/select', [TourisClientController::class, 'selectClient'])-
 Route::get('/flights', [TourisFlightController::class, 'index'])->name('flights.index');
 Route::post('/flights', [TourisFlightController::class, 'store'])->name('flights.store');
 
-
+Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
+Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
 
 Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');

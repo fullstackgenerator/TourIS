@@ -195,14 +195,14 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="number" class="form-control" name="final_total_amount"
+                                    <input type="number" class="form-control" name="amount"
                                            placeholder="Amount"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="receipt_date"/>
+                                    <input type="date" class="form-control" name="payment_date"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="receipt_full_name"
+                                    <input type="text" class="form-control" name="full_name"
                                            placeholder="Full name"/>
                                 </div>
                                 <div class="col-md-6 py-2">
@@ -212,14 +212,10 @@
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="receipt_phone" placeholder="Phone"/>
                                 </div>
-                                <div class="col-md-6 py-2">
-                                    <input type="number" class="form-control" name="receipt_amount"
-                                           placeholder="Amount"/>
-                                </div>
                                 <div class="col-md-6 py-3">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" name="cancellation_check"/>
-                                        <label class="form-check-label" for="cancellation_check">Cancellation option
+                                        <input type="checkbox" class="form-check-input" name="cancellation"/>
+                                        <label class="form-check-label" for="cancellation">Cancellation option
                                             (+15%)</label>
                                     </div>
                                 </div>

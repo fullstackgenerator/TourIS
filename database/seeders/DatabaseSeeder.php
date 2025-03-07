@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             TourisAccommodationSeeder::class,
             TourisClientSeeder::class,
             TourisFlightSeeder::class,
+            TourisPaymentSeeder::class,
         ]);
     }
 }
