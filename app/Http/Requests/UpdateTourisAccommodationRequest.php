@@ -11,7 +11,7 @@ class UpdateTourisAccommodationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateTourisAccommodationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'accommodation_name' => 'required|string|max:255',
+            'accommodation_address' => 'required|string|max:255',
+            'accommodation_city' => 'required|string|max:255',
+            'accommodation_country' => 'required|string|max:255',
+            'accommodation_phone' => 'required|string|max:20',
+            'accommodation_email' => 'required|email|max:255',
         ];
     }
 }

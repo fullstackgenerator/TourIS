@@ -1,8 +1,13 @@
 @extends('layouts.sidebar')
 
 @section('content')
-    <div class="container mt-4">
-        <h2>Sales Records</h2>
+    <div class="card py-2 w-100 mx-auto">
+        <div class="card-body">
+            <h3 class="pb-4 font-weight-bold">Manage accommodations</h3>
+
+            <div class="row">
+
+                    <h4>Search accommodations</h4>
 
         @if($sales->isEmpty())
             <p>No sales records found.</p>
@@ -26,8 +31,8 @@
                     <tbody>
                     @foreach($sales as $sale)
                         <tr>
-                            <td>{{ optional($sale->client)->first_name }} {{ optional($sale->client)->last_name }}</td>
-                            <td>{{ optional($sale->accommodation)->accommodation_name }}</td>
+                            <td>{{ $sale->first_name }} {{ $sale->last_name }}</td>
+                            <td>{{ $sale->accommodation_name }}</td>
                             <td>{{ $sale->date_from }}</td>
                             <td>{{ $sale->date_to }}</td>
                             <td>{{ $sale->flight_number }}</td>
@@ -46,5 +51,8 @@
                 {{ $sales->links() }}
             </div>
         @endif
+    </div>
+            </div>
+        </div>
     </div>
 @endsection

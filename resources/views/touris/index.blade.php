@@ -19,32 +19,32 @@
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="accommodation_name"
                                            placeholder="Name" value="{{ $accommodation->accommodation_name ?? '' }}"
-                                           disabled/>
+                                           readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="accommodation_address"
                                            placeholder="Address"
-                                           value="{{ $accommodation->accommodation_address ?? '' }}" disabled/>
+                                           value="{{ $accommodation->accommodation_address ?? '' }}" readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="accommodation_city"
                                            placeholder="City" value="{{ $accommodation->accommodation_city ?? '' }}"
-                                           disabled/>
+                                           readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="accommodation_country"
                                            placeholder="Country"
-                                           value="{{ $accommodation->accommodation_country ?? '' }}" disabled/>
+                                           value="{{ $accommodation->accommodation_country ?? '' }}" readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="accommodation_phone"
                                            placeholder="Phone" value="{{ $accommodation->accommodation_phone ?? '' }}"
-                                           disabled/>
+                                           readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="accommodation_email"
                                            placeholder="Email" value="{{ $accommodation->accommodation_email ?? '' }}"
-                                           disabled/>
+                                           readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="date" class="form-control" name="date_from"/>
@@ -152,28 +152,28 @@
                             <div class="row">
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="first_name"
-                                           placeholder="First name" value="{{ $client['first_name'] ?? '' }}" disabled/>
+                                           placeholder="First name" value="{{ $client['first_name'] ?? '' }}" readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="last_name"
-                                           placeholder="Last name" value="{{ $client['last_name'] ?? '' }}" disabled/>
+                                           placeholder="Last name" value="{{ $client['last_name'] ?? '' }}" readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="date" class="form-control" name="date_of_birth"
-                                           value="{{ $client['date_of_birth'] ?? '' }}" disabled/>
+                                           value="{{ $client['date_of_birth'] ?? '' }}" readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="client_address"
                                            placeholder="Address" value="{{ $client['client_address'] ?? '' }}"
-                                           disabled/>
+                                           readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="client_phone"
-                                           placeholder="Phone" value="{{ $client['client_phone'] ?? '' }}" disabled/>
+                                           placeholder="Phone" value="{{ $client['client_phone'] ?? '' }}" readonly/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="client_email"
-                                           placeholder="Email" value="{{ $client['client_email'] ?? '' }}" disabled/>
+                                           placeholder="Email" value="{{ $client['client_email'] ?? '' }}" readonly/>
                                 </div>
                             </div>
                         </div>
