@@ -31,8 +31,7 @@ Route::get('/payments', [TourisPaymentController::class, 'index'])->name('paymen
 Route::post('/payments', [TourisPaymentController::class, 'store'])->name('payments.store');
 
 Route::get('/sales', [SaleController::class, 'index'])->name('sales.index');
+Route::get('/sales/{sale}/edit', [SaleController::class, 'edit'])->name('sales.edit');
+Route::put('/sales/{sale}', [SaleController::class, 'update'])->name('sales.update');
 Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
-
-
-
-
+Route::delete('/sales/{sale}', [SaleController::class, 'destroy'])->name('sales.destroy');

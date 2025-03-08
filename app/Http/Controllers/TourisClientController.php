@@ -22,7 +22,6 @@ class TourisClientController extends Controller
         return view('clients.index', compact('clients'));
     }
 
-
     /**
      * Store a newly created resource in storage.
      */
@@ -67,7 +66,7 @@ class TourisClientController extends Controller
         $client = TourisClient::findOrFail($id);
         $client->update($validated);
 
-        return redirect()->route('clients.index')->with('success', 'Client updated successfully');
+        return redirect()->route('clients.index');
     }
 
     /**

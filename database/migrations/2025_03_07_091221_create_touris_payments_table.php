@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->string('recipient_address')->nullable();
             $table->string('recipient_phone')->nullable();
-            $table->string('cancellation')->nullable();
             $table->timestamps();
         });
     }

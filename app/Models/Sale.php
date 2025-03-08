@@ -40,7 +40,6 @@ class Sale extends Model
         'full_name',
         'receipt_address',
         'receipt_phone',
-        'cancellation',
     ];
 
     public function client()

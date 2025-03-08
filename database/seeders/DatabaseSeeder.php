@@ -23,8 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             TourisAccommodationSeeder::class,
             TourisClientSeeder::class,
-            TourisFlightSeeder::class,
-            TourisPaymentSeeder::class,
         ]);
     }
 }

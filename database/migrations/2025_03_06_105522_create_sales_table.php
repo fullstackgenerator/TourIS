@@ -46,7 +46,6 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->string('receipt_address')->nullable();
             $table->string('receipt_phone')->nullable();
-            $table->boolean('cancellation')->default(0);
 
             $table->timestamps();
         });

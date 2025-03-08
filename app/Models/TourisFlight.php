@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class TourisFlight extends Model
 {
-    /** @use HasFactory<\Database\Factories\TourisFlightFactory> */
     use HasFactory;
 
     protected $fillable = [
@@ -15,6 +14,8 @@ class TourisFlight extends Model
         'flight_class',
         'seat_number',
         'departure_from',
-        'arrival_to'
+        'arrival_to',
+        'carrier',
+        'departure_date',
     ];
 }

@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\TourisClient;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class TourisClientSeeder extends Seeder
 {
@@ -12,6 +14,6 @@ class TourisClientSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        TourisClient::factory()->count(10)->create();
     }
 }

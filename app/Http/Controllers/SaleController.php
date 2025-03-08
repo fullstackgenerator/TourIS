@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sale;
-use App\Http\Requests\StoreSaleRequest;
 use App\Http\Requests\UpdateSaleRequest;
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -16,7 +15,7 @@ class SaleController extends Controller
     {
         $client = session('selected_client');
         $accommodation = session('accommodation');
-        $sales = Sale::with(['client', 'accommodation'])->paginate(10);
+        $sales = Sale::with(['client', 'accommodation'])->simplePaginate(7);
         return view('sales.index', compact('sales', 'client', 'accommodation'));
     }
 
@@ -26,7 +25,6 @@ class SaleController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the request
         $validated = $request->validate([
             'accommodation_name' => 'nullable|string',
             'accommodation_address' => 'nullable|string',
@@ -61,20 +59,11 @@ class SaleController extends Controller
             'full_name' => 'nullable|string',
             'receipt_address' => 'nullable|string',
             'receipt_phone' => 'nullable|string',
-            'cancellation' => 'nullable|boolean'
         ]);
 
         $sale = Sale::create($validated);
 
-        return redirect()->route('sales.index')->with('success', 'Sale recorded successfully!');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Sale $sale)
-    {
-        //
+        return redirect()->route('sales.index');
     }
 
     /**
@@ -82,22 +71,26 @@ class SaleController extends Controller
      */
     public function edit(Sale $sale)
     {
-        //
+        return view('sales.edit', compact('sale'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateSaleRequest $request, Sale $sale)
     {
-        //
+        $sale->update($request->validated());
+        return redirect()->route('sales.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Sale $sale)
     {
-        //
+        $sale->delete();
+        return redirect()->route('sales.index');
     }
 }

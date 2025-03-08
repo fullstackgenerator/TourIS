@@ -28,7 +28,6 @@ class UpdateTourisPaymentRequest extends FormRequest
             'full_name' => 'required|string|max:100',
             'recipient_address' => 'required|string|max:100',
             'recipient_phone' => 'required|string|max:100',
-            'cancellation' => 'required|boolean',
         ];
     }
 }

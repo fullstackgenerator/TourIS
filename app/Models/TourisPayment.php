@@ -17,6 +17,5 @@ class TourisPayment extends Model
         'full_name',
         'recipient_address',
         'recipient_phone',
-        'cancellation',
     ];
 }

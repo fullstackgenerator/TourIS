@@ -20,8 +20,6 @@ class TourisAccommodationController extends Controller
         return view('accommodations.index', compact('accommodations'));
     }
 
-
-
     /**
      * Store a new accommodation.
      */

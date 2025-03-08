@@ -17,7 +17,12 @@ class TourisClientFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'first_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'date_of_birth' => $this->faker->date,
+            'client_address' => $this->faker->address,
+            'client_phone' => $this->faker->phoneNumber,
+            'client_email' => $this->faker->email,
         ];
     }
 }

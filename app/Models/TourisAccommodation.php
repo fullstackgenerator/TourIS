@@ -18,10 +18,4 @@ class TourisAccommodation extends Model
         'accommodation_phone',
         'accommodation_email',
     ];
-
-    public function sales()
-    {
-        return $this->hasMany(Sale::class);
-    }
-
 }
