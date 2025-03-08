@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\SalesExport;
 use App\Http\Requests\UpdateSaleRequest;
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class SaleController extends Controller
 {
@@ -39,8 +43,10 @@ class SaleController extends Controller
             'flight_number' => 'nullable|string',
             'flight_class' => 'nullable|string',
             'seat_number' => 'nullable|string',
-            'departure_from' => 'nullable|string',
-            'arrival_to' => 'nullable|string',
+            'departure_from_start' => 'nullable|string',
+            'arrival_to_start' => 'nullable|string',
+            'departure_from_finish' => 'nullable|string',
+            'arrival_to_finish' => 'nullable|string',
             'carrier' => 'nullable|string',
             'departure_date' => 'nullable|date',
             'arrival_date' => 'nullable|date',
@@ -92,5 +98,18 @@ class SaleController extends Controller
     {
         $sale->delete();
         return redirect()->route('sales.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new SalesExport(), 'sales.xlsx');
+    }
+
+    public function exportPdf()
+    {
+        $sales = Sale::all();
+        $pdf = Pdf::loadView('sales.pdf', compact('sales'))
+            ->setPaper('a4', 'landscape');
+        return $pdf->download('sales_report.pdf');
     }
 }

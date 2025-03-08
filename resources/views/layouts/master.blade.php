@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Bill App')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0/dist/css/tabler.min.css">
+    <link rel="stylesheet" href="{{ public_path('css/pdf.css') }}">
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
 <body class="font-sans antialiased">

@@ -80,12 +80,20 @@
                                            value="{{ old('seat_number') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="departure_from"
-                                           placeholder="Departure location" value="{{ old('departure_from') }}"/>
+                                    <input type="text" class="form-control" name="departure_from_start"
+                                           placeholder="Departure location" value="{{ old('departure_from_start') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="arrival_to"
-                                           placeholder="Arrival location" value="{{ old('arrival_to') }}"/>
+                                    <input type="text" class="form-control" name="arrival_to_start"
+                                           placeholder="Arrival location" value="{{ old('arrival_to_start') }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="text" class="form-control" name="departure_from_finish"
+                                           placeholder="Departure location" value="{{ old('departure_from_finish') }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="text" class="form-control" name="arrival_to_finish"
+                                           placeholder="Arrival location" value="{{ old('arrival_to_finish') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="carrier">

@@ -16,8 +16,10 @@ return new class extends Migration
             $table->string('flight_number');
             $table->string('flight_class');
             $table->string('seat_number');
-            $table->string('departure_from');
-            $table->string('arrival_to');
+            $table->string('departure_from_start');
+            $table->string('arrival_to_start');
+            $table->string('departure_from_finish');
+            $table->string('arrival_to_finish');
             $table->string('carrier');
             $table->date('departure_date');
             $table->date('arrival_date');

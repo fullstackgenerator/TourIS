@@ -1,9 +1,13 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 @extends('layouts.sidebar')
 
 @section('content')
     <div class="card py-2 w-100 mx-auto">
         <div class="card-body">
-            <h3 class="pb-4 font-weight-bold">Manage packages</h3>
+            <h3 class="pb-4 font-weight-bold">Manage sales</h3>
 
             <div class="row">
 
@@ -21,9 +25,11 @@
                                 <th>Flight Number</th>
                                 <th>Departure</th>
                                 <th>Arrival</th>
+                                <th>Departure from finish</th>
+                                <th>Arrival to finish</th>
                                 <th>Total Amount</th>
                                 <th>Payment Type</th>
-                                <th>Actions</th>
+                                <th>details</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,23 +37,29 @@
                                 <tr>
                                     <td>{{ $sale->first_name }} {{ $sale->last_name }}</td>
                                     <td>{{ $sale->accommodation_name }}</td>
-                                    <td>{{ $sale->date_from }}</td>
-                                    <td>{{ $sale->date_to }}</td>
+                                    <td>{{ Carbon::parse($sale->date_from)->format('d. m. Y') }}</td>
+                                    <td>{{ Carbon::parse($sale->date_to)->format('d. m. Y') }}</td>
                                     <td>{{ $sale->flight_number }}</td>
-                                    <td>{{ $sale->departure_from }}</td>
-                                    <td>{{ $sale->arrival_to }}</td>
-                                    <td>
-                                        ${{ number_format($sale->accommodation_total_amount + $sale->flights_total_amount, 2) }}</td>
+                                    <td>{{ $sale->departure_from_start }} departure <br>{{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>
+                                    <td>{{ $sale->arrival_to_start }} arrival <br>{{ Carbon::parse($sale->arrival_date)->format('d. m. Y') }}</td>
+                                    <td>{{ $sale->departure_from_finish }} departure <br>{{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>
+                                    <td>{{ $sale->arrival_to_finish }} arrival <br>{{ Carbon::parse($sale->arrival_date)->format('d. m. Y') }}</td>
+                                    <td>${{ number_format($sale->accommodation_total_amount + $sale->flights_total_amount, 2) }}</td>
                                     <td>{{ $sale->payment_type }}</td>
                                     <td class="text-center">
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a href="{{ route('sales.edit', $sale->id) }}"
-                                               class="btn btn-warning">Edit</a></div>
-
+                                            <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-warning">Edit</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
+
+                        <div class="d-flex justify-content-center gap-2 pt-4">
+                            <a href="{{ route('sales.export') }}" class="btn btn-outline-success">Export XLS</a>
+                            <a href="{{ route('sales.exportPdf') }}" class="btn btn-outline-danger">Export PDF</a>
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-center pt-4">

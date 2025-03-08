@@ -87,12 +87,20 @@
                                            placeholder="Seat number" value="{{ old('seat_number', $sale->seat_number) }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="departure_from"
-                                           placeholder="Departure location" value="{{ old('departure_from', $sale->departure_from) }}"/>
+                                    <input type="text" class="form-control" name="departure_from_start"
+                                           placeholder="Departure location" value="{{ old('departure_from_start', $sale->departure_from_start) }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="arrival_to"
-                                           placeholder="Arrival location" value="{{ old('arrival_to', $sale->arrival_to) }}"/>
+                                    <input type="text" class="form-control" name="arrival_to_start"
+                                           placeholder="Arrival location" value="{{ old('arrival_to_start', $sale->arrival_to_start) }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="text" class="form-control" name="departure_from_finish"
+                                           placeholder="Departure location" value="{{ old('departure_from_finish', $sale->departure_from_finish) }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="text" class="form-control" name="arrival_to_finish"
+                                           placeholder="Arrival location" value="{{ old('arrival_to_finish', $sale->arrival_to_finish) }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="carrier">
@@ -134,9 +142,9 @@
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="payment_type">
                                         <option value="" disabled selected>Select payment type</option>
-                                        <option value="Credit Card" {{ old('payment_type', $sale->payment_type) == 'Credit Card' ? 'selected' : '' }}>Credit Card</option>
-                                        <option value="PayPal" {{ old('payment_type', $sale->payment_type) == 'PayPal' ? 'selected' : '' }}>PayPal</option>
-                                        <option value="Bank Transfer" {{ old('payment_type', $sale->payment_type) == 'Bank Transfer' ? 'selected' : '' }}>Bank Transfer</option>
+                                        <option value="Credit Card" {{ old('payment_type', $sale->payment_type) == 'Credit card' ? 'selected' : '' }}>Credit card</option>
+                                        <option value="PayPal" {{ old('payment_type', $sale->payment_type) == 'Paypal' ? 'selected' : '' }}>Paypal</option>
+                                        <option value="Bank Transfer" {{ old('payment_type', $sale->payment_type) == 'Bank Transfer' ? 'selected' : '' }}>Bank transfer</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 py-2">

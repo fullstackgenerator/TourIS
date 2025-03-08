@@ -35,3 +35,6 @@ Route::get('/sales/{sale}/edit', [SaleController::class, 'edit'])->name('sales.e
 Route::put('/sales/{sale}', [SaleController::class, 'update'])->name('sales.update');
 Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
 Route::delete('/sales/{sale}', [SaleController::class, 'destroy'])->name('sales.destroy');
+
+Route::get('/sales/export/', [SaleController::class, 'export'])->name('sales.export');
+Route::get('/sales/export-pdf', [SaleController::class, 'exportPdf'])->name('sales.exportPdf');
