@@ -25,13 +25,15 @@ return new class extends Migration
 
             $table->string('flight_class')->nullable();
             $table->string('seat_number')->nullable();
-            $table->string('departure_from_start')->nullable();
-            $table->string('arrival_to_start')->nullable();
-            $table->string('departure_from_finish')->nullable();
-            $table->string('arrival_to_finish')->nullable();
+            $table->string('departure_airport_trip_A');
+            $table->string('arrival_airport_trip_A');
+            $table->date('departure_airport_trip_A_date');
+            $table->date('arrival_airport_trip_A_date');
+            $table->string('departure_airport_trip_B');
+            $table->string('arrival_airport_trip_B');
+            $table->date('departure_airport_trip_B_date');
+            $table->date('arrival_airport_trip_B_date');
             $table->string('carrier')->nullable();
-            $table->date('departure_date_to_destination')->nullable();
-            $table->date('departure_date_from_destination')->nullable();
             $table->decimal('flights_total_amount', 10, 2)->nullable();
 
             $table->string('first_name')->nullable();

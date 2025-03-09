@@ -36,13 +36,14 @@ class TourisFlightController extends Controller
         $flight = new TourisFlight([
             'flight_class' => $request->flight_class,
             'seat_number' => $request->seat_number,
-            'departure_from_start' => $request->departure_from_start,
-            'arrival_to_start' => $request->arrival_to_start,
-            'departure_from_finish' => $request->departure_from_finish,
-            'arrival_to_finish' => $request->arrival_to_finich,
+            'departure_airport_trip_A' => $request->departure_airport_trip_A,
+            'arrival_airport_trip_A' => $request->arrival_airport_trip_A,
+            'arrival_airport_trip_A_date' => $request->arrival_airport_trip_A_date,
+            'departure_airport_trip_B' => $request->departure_airport_trip_B,
+            'arrival_airport_trip_B' => $request->arrival_airport_trip_B,
+            'departure_airport_trip_B_date' => $request->departure_airport_trip_B_date,
+            'arrival_airport_trip_B_date' => $request->arrival_airport_trip_B_date,
             'carrier' => $request->carrier,
-            'departure_date_to_destination' => $request->departure_date_to_destination,
-            'departure_date_from_destination' => $request->departure_date_from_destination,
             'flights_total_amount' => $request->flights_total_amount,
         ]);
 

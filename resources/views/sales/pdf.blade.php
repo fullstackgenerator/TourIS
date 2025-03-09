@@ -36,10 +36,17 @@
         <th>Check-in</th>
         <th>Check-out</th>
         <th>Departure to</th>
+        <th>Departure date</th>
         <th>Departure from</th>
+        <th>Departure date</th>
+        <th>Departure to</th>
+        <th>Departure date</th>
+        <th>Departure from</th>
+        <th>Departure date</th>
         <th>Total Amount</th>
         <th>Payment Type</th>
     </tr>
+
     </thead>
     <tbody>
     @foreach($sales as $sale)
@@ -48,8 +55,14 @@
             <td>{{ $sale->accommodation_name }}</td>
             <td>{{ Carbon::parse($sale->date_from)->format('d. m. Y') }}</td>
             <td>{{ Carbon::parse($sale->date_to)->format('d. m. Y') }}</td>
-            <td>{{ Carbon::parse($sale->departure_date_to_destination)->format('d. m. Y') }}</td>
-            <td>{{ Carbon::parse($sale->departure_date_from_destination)->format('d. m. Y') }}</td>
+            <td>{{ $sale->departure_airport_trip_A }}</td>
+            <td>{{ Carbon::parse($sale->departure_airport_trip_A_date)->format('d. m. Y') }}</td>
+            <td>{{ $sale->arrival_airport_trip_A }}</td>
+            <td>{{ Carbon::parse($sale->arrival_airport_trip_A_date)->format('d. m. Y') }}</td>
+            <td>{{ $sale->departure_airport_trip_B }}</td>
+            <td>{{ Carbon::parse($sale->departure_airport_trip_B_date)->format('d. m. Y') }}</td>
+            <td>{{ $sale->arrival_airport_trip_B }}</td>
+            <td>{{ Carbon::parse($sale->arrival_airport_trip_B_date)->format('d. m. Y') }}</td>
             <td>€{{ number_format($sale->accommodation_total_amount + $sale->flights_total_amount, 2) }}</td>
             <td>{{ $sale->payment_type }}</td>
         </tr>

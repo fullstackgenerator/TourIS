@@ -15,13 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('flight_class');
             $table->string('seat_number');
-            $table->string('departure_from_start');
-            $table->string('arrival_to_start');
-            $table->string('departure_from_finish');
-            $table->string('arrival_to_finish');
+            $table->string('departure_airport_trip_A');
+            $table->string('arrival_airport_trip_A');
+            $table->date('departure_airport_trip_A_date');
+            $table->date('arrival_airport_trip_A_date');
+            $table->string('departure_airport_trip_B');
+            $table->string('arrival_airport_trip_B');
+            $table->date('departure_airport_trip_B_date');
+            $table->date('arrival_airport_trip_B_date');
             $table->string('carrier');
-            $table->date('departure_date_to_destination');
-            $table->date('departure_date_from_destination');
             $table->timestamps();
         });
     }

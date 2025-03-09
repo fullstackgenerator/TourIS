@@ -76,24 +76,46 @@
                                            value="{{ old('seat_number') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="departure_from_start"
-                                           placeholder="Departure location to destination" value="{{ old('departure_from_start') }}"/>
+                                    <input type="text" class="form-control" name="departure_airport_trip_A"
+                                           placeholder="Departure airport trip A" value="{{ old('departure_airport_trip_A') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="arrival_to_start"
-                                           placeholder="Arrival location" value="{{ old('arrival_to_start') }}"/>
+                                    <input type="text" class="form-control" name="arrival_airport_trip_A"
+                                           placeholder="Arrival airport trip A" value="{{ old('arrival_airport_trip_A') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="departure_from_finish"
-                                           placeholder="Departure location from destination" value="{{ old('departure_from_finish') }}"/>
+                                    <input type="date" class="form-control" name="departure_airport_trip_A_date"
+                                           value="{{ old('departure_airport_trip_A_date') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="arrival_to_finish"
-                                           placeholder="Arrival location" value="{{ old('arrival_to_finish') }}"/>
+                                    <input type="date" class="form-control" name="arrival_airport_trip_A_date"
+                                           value="{{ old('arrival_airport_trip_A_date') }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="text" class="form-control" name="departure_airport_trip_B"
+                                           placeholder="Departure airport trip B" value="{{ old('departure_airport_trip_B') }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="text" class="form-control" name="arrival_airport_trip_B"
+                                           placeholder="Arrival airport trip B" value="{{ old('arrival_airport_trip_B') }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="date" class="form-control" name="departure_airport_trip_B_date"
+                                           value="{{ old('departure_airport_trip_B_date') }}"/>
+                                </div>
+                                <div class="col-md-6 py-2">
+                                    <input type="date" class="form-control" name="arrival_airport_trip_B_date"
+                                           value="{{ old('arrival_airport_trip_B_date') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="carrier">
                                         <option value="" disabled selected>Select carrier</option>
+                                        <option value="American Airlines" {{ old('carrier') == 'American Airlines' ? 'selected' : '' }}>
+                                            American Airlines
+                                        </option>
+                                        <option value="Delta Airlines" {{ old('carrier') == 'Delta Airlines' ? 'selected' : '' }}>
+                                            Delta Airlines
+                                        </option>
                                         <option value="Lufthansa" {{ old('carrier') == 'Lufthansa' ? 'selected' : '' }}>
                                             Lufthansa
                                         </option>
@@ -124,14 +146,6 @@
                                             Swiss International Air Lines
                                         </option>
                                     </select>
-                                </div>
-                                <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="departure_date_to_destination"
-                                           value="{{ old('departure_date_to_destination') }}"/>
-                                </div>
-                                <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="departure_date_from_destination"
-                                           value="{{ old('departure_date_from_destination') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="number" class="form-control" name="flights_total_amount"
