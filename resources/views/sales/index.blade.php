@@ -7,8 +7,8 @@
 @section('content')
     <div class="card py-2 w-100 mx-auto">
         <div class="card-body">
-            <h3 class="pb-4 font-weight-bold">Manage sales</h3>
-            <form method="GET" action="{{ route('sales.index') }}" class="mb-4 w-25">
+            <h3 class="font-weight-bold">Manage sales</h3>
+            <form method="GET" action="{{ route('sales.index') }}" class="pb-4 w-25">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Search"
                            value="{{ request('search') }}">
