@@ -8,11 +8,18 @@
     <div class="card py-2 w-100 mx-auto">
         <div class="card-body">
             <h3 class="pb-4 font-weight-bold">Manage sales</h3>
-
+            <form method="GET" action="{{ route('sales.index') }}" class="mb-4 w-25">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search"
+                           value="{{ request('search') }}">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
             <div class="row">
                 @if($sales->isEmpty())
                     <p>No sales records found.</p>
                 @else
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead class="table-dark">
@@ -65,12 +72,12 @@
 
 
                                     <td class="text-center">
-                                        <div class="d-flex justify-content-center gap-2">
-                                            <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-warning">Edit</a>
+                                        <div class="d-flex flex-column gap-2 align-items-center">
+                                            <a href="{{ route('sales.edit', $sale->id) }}" class="btn btn-teal w-100">Edit</a>
                                             <form action="{{ route('sales.destroy', $sale->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" class="btn btn-pinterest w-100">Delete</button>
                                             </form>
                                         </div>
                                     </td>
@@ -80,8 +87,8 @@
                         </table>
 
                         <div class="d-flex justify-content-center gap-2 pt-4">
-                            <a href="{{ route('sales.export') }}" class="btn btn-outline-success">Export XLS</a>
-                            <a href="{{ route('sales.exportPdf') }}" class="btn btn-outline-danger">Export PDF</a>
+                            <a href="{{ route('sales.export') }}" class="btn btn-outline-teal">Export XLS</a>
+                            <a href="{{ route('sales.exportPdf') }}" class="btn btn-outline-pinterest">Export PDF</a>
                         </div>
                     </div>
 

@@ -9,7 +9,6 @@
                 <div class="col-md-6">
                     <h4>Search accommodations</h4>
                     <form method="GET" action="{{ route('accommodations.index') }}" class="mb-4">
-                        @csrf
                         <div class="input-group">
                             <input type="text" name="search" class="form-control" placeholder="Search"
                                    value="{{ request('search') }}">

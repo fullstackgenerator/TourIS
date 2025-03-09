@@ -15,11 +15,29 @@ class SaleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $client = session('selected_client');
         $accommodation = session('accommodation');
-        $sales = Sale::with(['client', 'accommodation'])->simplePaginate(7);
+
+        $query = Sale::with(['client', 'accommodation']);
+
+        if ($request->has('search') && !empty($request->search)) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('first_name', 'like', "%{$search}%")
+                    ->orWhere('last_name', 'like', "%{$search}%")
+                    ->orWhere('accommodation_name', 'like', "%{$search}%")
+                    ->orWhere('departure_airport_trip_A', 'like', "%{$search}%")
+                    ->orWhere('arrival_airport_trip_A', 'like', "%{$search}%")
+                    ->orWhere('departure_airport_trip_B', 'like', "%{$search}%")
+                    ->orWhere('arrival_airport_trip_B', 'like', "%{$search}%")
+                    ->orWhere('payment_type', 'like', "%{$search}%");
+            });
+        }
+
+        $sales = $query->simplePaginate(5);
+
         return view('sales.index', compact('sales', 'client', 'accommodation'));
     }
 
