@@ -40,7 +40,6 @@ class SaleController extends Controller
             'date_to' => 'nullable|date',
             'accommodation_total_amount' => 'nullable|numeric',
 
-            'flight_number' => 'nullable|string',
             'flight_class' => 'nullable|string',
             'seat_number' => 'nullable|string',
             'departure_from_start' => 'nullable|string',
@@ -48,8 +47,8 @@ class SaleController extends Controller
             'departure_from_finish' => 'nullable|string',
             'arrival_to_finish' => 'nullable|string',
             'carrier' => 'nullable|string',
-            'departure_date' => 'nullable|date',
-            'arrival_date' => 'nullable|date',
+            'departure_date_to_destination' => 'nullable|date',
+            'departure_date_from_destination' => 'nullable|date',
             'flights_total_amount' => 'nullable|numeric',
 
             'first_name' => 'nullable|string',

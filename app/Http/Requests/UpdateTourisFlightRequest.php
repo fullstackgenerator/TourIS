@@ -22,7 +22,6 @@ class UpdateTourisFlightRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'flight_number' => 'required|string|min:4|max:4',
             'flight_class'  => ['business', 'economy'],
             'seat_number' => ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J','K'],
             'departure_from_start' => 'required|string|max:255',

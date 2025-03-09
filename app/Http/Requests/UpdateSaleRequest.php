@@ -30,7 +30,6 @@ class UpdateSaleRequest extends FormRequest
             'date_to' => 'required|date',
             'accommodation_total_amount' => 'required|numeric|min:0',
 
-            'flight_number' => 'nullable|string|max:255',
             'flight_class' => 'nullable|string|max:255',
             'seat_number' => 'nullable|string|max:255',
             'departure_from_start' => 'nullable|string|max:255',
@@ -38,8 +37,8 @@ class UpdateSaleRequest extends FormRequest
             'departure_from_finish' => 'nullable|string|max:255',
             'arrival_to_finish' => 'nullable|string|max:255',
             'carrier' => 'nullable|string|max:255',
-            'departure_date' => 'nullable|date',
-            'arrival_date' => 'nullable|date',
+            'departure_date_to_destination' => 'nullable|date',
+            'departure_date_from_destination' => 'nullable|date',
             'flights_total_amount' => 'nullable|numeric|min:0',
 
             'payment_type' => 'required|string|max:255',

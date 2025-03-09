@@ -21,7 +21,6 @@ class TourisFlightController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'flight_number' => 'required|string|max:10',
             'flight_class' => 'required|string|max:50',
             'seat_number' => 'required|string|max:10',
             'departure_from_start' => 'required|string|max:255',
@@ -29,13 +28,12 @@ class TourisFlightController extends Controller
             'departure_from_finish' => 'required|string|max:255',
             'arrival_to_finish' => 'required|string|max:255',
             'carrier' => 'required|string|max:100',
-            'departure_date' => 'required|date',
-            'arrival_date' => 'required|date',
+            'departure_date_to_destination' => 'required|date',
+            'departure_date_from_destination' => 'required|date',
             'flights_total_amount' => 'required|numeric|min:0',
         ]);
 
         $flight = new TourisFlight([
-            'flight_number' => $request->flight_number,
             'flight_class' => $request->flight_class,
             'seat_number' => $request->seat_number,
             'departure_from_start' => $request->departure_from_start,
@@ -43,8 +41,8 @@ class TourisFlightController extends Controller
             'departure_from_finish' => $request->departure_from_finish,
             'arrival_to_finish' => $request->arrival_to_finich,
             'carrier' => $request->carrier,
-            'departure_date' => $request->departure_date,
-            'arrival_date' => $request->arrival_date,
+            'departure_date_to_destination' => $request->departure_date_to_destination,
+            'departure_date_from_destination' => $request->departure_date_from_destination,
             'flights_total_amount' => $request->flights_total_amount,
         ]);
 

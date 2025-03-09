@@ -23,7 +23,6 @@ return new class extends Migration
             $table->date('date_to')->nullable();
             $table->decimal('accommodation_total_amount', 10, 2)->nullable();
 
-            $table->string('flight_number')->nullable();
             $table->string('flight_class')->nullable();
             $table->string('seat_number')->nullable();
             $table->string('departure_from_start')->nullable();
@@ -31,8 +30,8 @@ return new class extends Migration
             $table->string('departure_from_finish')->nullable();
             $table->string('arrival_to_finish')->nullable();
             $table->string('carrier')->nullable();
-            $table->date('departure_date')->nullable();
-            $table->date('arrival_date')->nullable();
+            $table->date('departure_date_to_destination')->nullable();
+            $table->date('departure_date_from_destination')->nullable();
             $table->decimal('flights_total_amount', 10, 2)->nullable();
 
             $table->string('first_name')->nullable();

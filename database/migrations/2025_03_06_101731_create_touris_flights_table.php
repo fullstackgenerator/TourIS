@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('touris_flights', function (Blueprint $table) {
             $table->id();
-            $table->string('flight_number');
             $table->string('flight_class');
             $table->string('seat_number');
             $table->string('departure_from_start');
@@ -21,8 +20,8 @@ return new class extends Migration
             $table->string('departure_from_finish');
             $table->string('arrival_to_finish');
             $table->string('carrier');
-            $table->date('departure_date');
-            $table->date('arrival_date');
+            $table->date('departure_date_to_destination');
+            $table->date('departure_date_from_destination');
             $table->timestamps();
         });
     }

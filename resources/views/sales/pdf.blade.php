@@ -51,7 +51,6 @@
             <td>{{ $sale->accommodation_name }}</td>
             <td>{{ Carbon::parse($sale->date_from)->format('d. m. Y') }}</td>
             <td>{{ Carbon::parse($sale->date_to)->format('d. m. Y') }}</td>
-            <td>{{ $sale->flight_number }}</td>
             <td>{{ $sale->departure_from_start }}  <br>{{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>
             <td>{{ $sale->arrival_to_start }}  <br>{{ Carbon::parse($sale->arrival_date)->format('d. m. Y') }}</td>
             <td>{{ $sale->departure_from_finish }} <br>{{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>

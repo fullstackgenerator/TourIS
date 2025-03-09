@@ -75,10 +75,6 @@
 
                             <div class="row">
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="flight_number"
-                                           placeholder="Flight number" value="{{ old('flight_number', $sale->flight_number) }}"/>
-                                </div>
-                                <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="flight_class"
                                            placeholder="Flight class" value="{{ old('flight_class', $sale->flight_class) }}"/>
                                 </div>
@@ -116,12 +112,12 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="departure_date"
-                                           value="{{ old('departure_date', $sale->departure_date) }}"/>
+                                    <input type="date" class="form-control" name="departure_date_to_destination"
+                                           value="{{ old('departure_date_to_destination', $sale->departure_date_to_destination) }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="arrival_date"
-                                           value="{{ old('arrival_date', $sale->arrival_date) }}"/>
+                                    <input type="date" class="form-control" name="departure_date_from_destination"
+                                           value="{{ old('departure_date_from_destination', $sale->departure_date_from_destination) }}"/>
                                 </div>
                                 <div class="col-md-6 pt-2 py-0">
                                     <input type="number" class="form-control" name="flights_total_amount"

@@ -68,10 +68,6 @@
                             <h5 class="card-title">Add flight details</h5>
                             <div class="row">
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="flight_number"
-                                           placeholder="Flight number" value="{{ old('flight_number') }}"/>
-                                </div>
-                                <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="flight_class"
                                            placeholder="Flight class" value="{{ old('flight_class') }}"/>
                                 </div>
@@ -81,7 +77,7 @@
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="departure_from_start"
-                                           placeholder="Departure location" value="{{ old('departure_from_start') }}"/>
+                                           placeholder="Departure location to destination" value="{{ old('departure_from_start') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="arrival_to_start"
@@ -89,7 +85,7 @@
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="departure_from_finish"
-                                           placeholder="Departure location" value="{{ old('departure_from_finish') }}"/>
+                                           placeholder="Departure location from destination" value="{{ old('departure_from_finish') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="arrival_to_finish"
@@ -130,12 +126,12 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="departure_date"
-                                           value="{{ old('departure_date') }}"/>
+                                    <input type="date" class="form-control" name="departure_date_to_destination"
+                                           value="{{ old('departure_date_to_destination') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="date" class="form-control" name="arrival_date"
-                                           value="{{ old('arrival_date') }}"/>
+                                    <input type="date" class="form-control" name="departure_date_from_destination"
+                                           value="{{ old('departure_date_from_destination') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="number" class="form-control" name="flights_total_amount"
