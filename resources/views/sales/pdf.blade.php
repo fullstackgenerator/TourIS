@@ -2,7 +2,7 @@
     <!DOCTYPE html>
 <html>
 <head>
-    <title>Sales report</title>
+    <title>Sales Report</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,6 +38,8 @@
         <th>Flight Number</th>
         <th>Departure</th>
         <th>Arrival</th>
+        <th>Departure from finish</th>
+        <th>Arrival to finish</th>
         <th>Total Amount</th>
         <th>Payment Type</th>
     </tr>
@@ -50,9 +52,11 @@
             <td>{{ Carbon::parse($sale->date_from)->format('d. m. Y') }}</td>
             <td>{{ Carbon::parse($sale->date_to)->format('d. m. Y') }}</td>
             <td>{{ $sale->flight_number }}</td>
-            <td>{{ $sale->departure_from }} departure {{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>
-            <td>{{ $sale->arrival_to }} arrival {{ Carbon::parse($sale->arrival_date)->format('d. m. Y') }}</td>
-            <td>${{ number_format($sale->accommodation_total_amount + $sale->flights_total_amount, 2) }}</td>
+            <td>{{ $sale->departure_from_start }}  <br>{{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>
+            <td>{{ $sale->arrival_to_start }}  <br>{{ Carbon::parse($sale->arrival_date)->format('d. m. Y') }}</td>
+            <td>{{ $sale->departure_from_finish }} <br>{{ Carbon::parse($sale->departure_date)->format('d. m. Y') }}</td>
+            <td>{{ $sale->arrival_to_finish }}  <br>{{ Carbon::parse($sale->arrival_date)->format('d. m. Y') }}</td>
+            <td>€{{ number_format($sale->accommodation_total_amount + $sale->flights_total_amount, 2) }}</td>
             <td>{{ $sale->payment_type }}</td>
         </tr>
     @endforeach

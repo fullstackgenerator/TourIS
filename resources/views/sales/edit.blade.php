@@ -142,8 +142,8 @@
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="payment_type">
                                         <option value="" disabled selected>Select payment type</option>
+                                        <option value="Cash" {{ old('payment_type', $sale->payment_type) == 'Cash' ? 'selected' : '' }}>Cash</option>
                                         <option value="Credit Card" {{ old('payment_type', $sale->payment_type) == 'Credit card' ? 'selected' : '' }}>Credit card</option>
-                                        <option value="PayPal" {{ old('payment_type', $sale->payment_type) == 'Paypal' ? 'selected' : '' }}>Paypal</option>
                                         <option value="Bank Transfer" {{ old('payment_type', $sale->payment_type) == 'Bank Transfer' ? 'selected' : '' }}>Bank transfer</option>
                                     </select>
                                 </div>
