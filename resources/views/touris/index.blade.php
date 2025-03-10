@@ -5,7 +5,7 @@
         <form method="POST" action="{{ route('sales.index') }}">
             @csrf
             <div class="row">
-                <!-- Accommodation card -->
+                {{--                Accommodation card--}}
                 <div class="col-md-6">
                     <div class="card mb-3">
                         <div class="card-body">
@@ -77,11 +77,13 @@
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="departure_airport_trip_A"
-                                           placeholder="Departure airport trip A" value="{{ old('departure_airport_trip_A') }}"/>
+                                           placeholder="Departure airport trip A"
+                                           value="{{ old('departure_airport_trip_A') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="arrival_airport_trip_A"
-                                           placeholder="Arrival airport trip A" value="{{ old('arrival_airport_trip_A') }}"/>
+                                           placeholder="Arrival airport trip A"
+                                           value="{{ old('arrival_airport_trip_A') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="date" class="form-control" name="departure_airport_trip_A_date"
@@ -93,11 +95,13 @@
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="departure_airport_trip_B"
-                                           placeholder="Departure airport trip B" value="{{ old('departure_airport_trip_B') }}"/>
+                                           placeholder="Departure airport trip B"
+                                           value="{{ old('departure_airport_trip_B') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="arrival_airport_trip_B"
-                                           placeholder="Arrival airport trip B" value="{{ old('arrival_airport_trip_B') }}"/>
+                                           placeholder="Arrival airport trip B"
+                                           value="{{ old('arrival_airport_trip_B') }}"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="date" class="form-control" name="departure_airport_trip_B_date"
@@ -110,10 +114,12 @@
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="carrier">
                                         <option value="" disabled selected>Select carrier</option>
-                                        <option value="American Airlines" {{ old('carrier') == 'American Airlines' ? 'selected' : '' }}>
+                                        <option
+                                            value="American Airlines" {{ old('carrier') == 'American Airlines' ? 'selected' : '' }}>
                                             American Airlines
                                         </option>
-                                        <option value="Delta Airlines" {{ old('carrier') == 'Delta Airlines' ? 'selected' : '' }}>
+                                        <option
+                                            value="Delta Airlines" {{ old('carrier') == 'Delta Airlines' ? 'selected' : '' }}>
                                             Delta Airlines
                                         </option>
                                         <option value="Lufthansa" {{ old('carrier') == 'Lufthansa' ? 'selected' : '' }}>
@@ -202,7 +208,9 @@
                     <div class="card mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Payment details</h5>
-
+                            @php
+                                $client = session('selected_client');
+                            @endphp
                             <div class="row">
                                 <div class="col-md-6 py-2">
                                     <select class="form-control" name="payment_type">
@@ -212,6 +220,7 @@
                                         <option value="Bank transfer">Bank transfer</option>
                                     </select>
                                 </div>
+
                                 <div class="col-md-6 py-2">
                                     <input type="number" class="form-control" name="amount"
                                            placeholder="Amount"/>
@@ -221,14 +230,17 @@
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="full_name"
+                                           value="{{ ($client['first_name'] ?? '') . ' ' . ($client['last_name'] ?? '') }}"
                                            placeholder="Full name"/>
                                 </div>
                                 <div class="col-md-6 py-2">
                                     <input type="text" class="form-control" name="receipt_address"
+                                           value="{{ $client['client_address'] ?? '' }}"
                                            placeholder="Address"/>
                                 </div>
                                 <div class="col-md-6 py-2">
-                                    <input type="text" class="form-control" name="receipt_phone" placeholder="Phone"/>
+                                    <input type="text" class="form-control" name="receipt_phone"
+                                           value="{{ $client['client_phone'] ?? '' }}" placeholder="Phone"/>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +248,7 @@
                 </div>
 
 
-                <div class="row mt-3">
+                <div class="row mt-0">
                     <div class="col text-center">
                         <button type="submit" class="btn btn-primary">Confirm</button>
                     </div>
