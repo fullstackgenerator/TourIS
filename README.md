@@ -29,7 +29,7 @@ TourIS is a Laravel-based web application designed for travel and tourism agenci
 
 ### The reason behind TourIS
 
-As someone with a background in tourism and now working in web development, I saw an opportunity to merge both areas. The result is TourIS—an easy-to-use tool with essential features and a focus on reducing repetitive work for travel agents.
+As someone with a background in tourism and aspiring to work in software development, I saw an opportunity to merge both areas. The result is TourIS - an easy-to-use tool with essential features and a focus on reducing repetitive work for travel agents.
 
 ### License
 
