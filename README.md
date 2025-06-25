@@ -1,5 +1,7 @@
 ## TourIS
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 TourIS is a Laravel-based web application designed for travel and tourism agencies. It provides a fast, effective, and easy-to-use solution for managing four key areas - Accommodation, flights, clients and payments.
 
 ### Features
@@ -29,4 +31,6 @@ TourIS is a Laravel-based web application designed for travel and tourism agenci
 
 As someone with a background in tourism and now working in web development, I saw an opportunity to merge both areas. The result is TourIS—an easy-to-use tool with essential features and a focus on reducing repetitive work for travel agents.
 
-*Friendly reminder: This is just a project, a prototype, not something you'd want to run in production unless you're feeling adventurous (and maybe a little reckless).*
+### License
+
+This project is licensed under the [MIT License](LICENSE).
